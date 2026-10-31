@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Maparell</title><style>:root{color-scheme:light dark;--bg:#fff;--fg:#1c1c1e;--muted:#6e6e73;--accent:#0a66d8;--line:#e5e5ea}
 @media (prefers-color-scheme:dark){:root{--bg:#000;--fg:#f2f2f7;--muted:#a1a1a6;--accent:#4c9bff;--line:#2c2c2e}}
 body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -9,4 +9,17 @@ h2{font-size:18px;margin:28px 0 6px}p{margin:0 0 10px;overflow-wrap:anywhere}a{c
 .langs{margin-bottom:8px}.langs button{font:inherit;background:none;border:1px solid var(--line);color:var(--fg);
 border-radius:8px;padding:4px 10px;cursor:pointer}.langs button[aria-pressed=true]{border-color:var(--accent);
 color:var(--accent)}footer{border-top:1px solid var(--line);margin-top:40px;padding-top:16px}
-[data-lang]{display:none}[data-lang].shown{display:block}</style></head><body><main><h1>Maparell</h1><p><a href="impressum/">Impressum</a></p><p><a href="privacy/">Datenschutzerklärung</a></p><p><a href="terms/">Nutzungsbedingungen</a></p><p><a href="disclaimer/">Haftungsausschluss</a></p></main></body></html>
+[data-lang]{display:none}[data-lang].shown{display:block}</style></head>
+<body><main><nav class="langs"><button value="en">English</button><button value="de">Deutsch</button><button value="es">Español</button><button value="fr">Français</button><button value="it">Italiano</button></nav>
+<section data-lang="en" class=shown><h1>Maparell</h1><p><a href="impressum/">Legal Notice</a></p><p><a href="privacy/">Privacy Policy</a></p><p><a href="terms/">Terms of Use</a></p><p><a href="disclaimer/">Disclaimer</a></p></section>
+<section data-lang="de"><h1>Maparell</h1><p><a href="impressum/">Impressum</a></p><p><a href="privacy/">Datenschutzerklärung</a></p><p><a href="terms/">Nutzungsbedingungen</a></p><p><a href="disclaimer/">Haftungsausschluss</a></p></section>
+<section data-lang="es"><h1>Maparell</h1><p><a href="impressum/">Aviso legal</a></p><p><a href="privacy/">Política de privacidad</a></p><p><a href="terms/">Condiciones de uso</a></p><p><a href="disclaimer/">Exención de responsabilidad</a></p></section>
+<section data-lang="fr"><h1>Maparell</h1><p><a href="impressum/">Mentions légales</a></p><p><a href="privacy/">Politique de confidentialité</a></p><p><a href="terms/">Conditions d’utilisation</a></p><p><a href="disclaimer/">Clause de non-responsabilité</a></p></section>
+<section data-lang="it"><h1>Maparell</h1><p><a href="impressum/">Note legali</a></p><p><a href="privacy/">Informativa sulla privacy</a></p><p><a href="terms/">Condizioni d’uso</a></p><p><a href="disclaimer/">Esclusione di responsabilità</a></p></section>
+</main><script>const langs=[...document.querySelectorAll('[data-lang]')].map(e=>e.dataset.lang);
+function show(l){document.querySelectorAll('[data-lang]').forEach(e=>e.classList.toggle('shown',e.dataset.lang===l));
+document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.value===l));
+document.documentElement.lang=l;
+const h=document.querySelector('[data-lang].shown h1');document.title=(h?h.textContent+' – ':'')+'Maparell'}
+document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>show(b.value));
+const want=(navigator.language||'en').slice(0,2);show(langs.includes(want)?want:'en');</script></body></html>

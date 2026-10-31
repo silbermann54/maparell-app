@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Summit database – Maparell</title><style>:root{color-scheme:light dark;--bg:#fff;--fg:#1c1c1e;--muted:#6e6e73;--accent:#0a66d8;--line:#e5e5ea}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--fg:#f2f2f7;--muted:#a1a1a6;--accent:#4c9bff;--line:#2c2c2e}}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+main{max-width:720px;margin:0 auto;padding:24px 16px 48px}h1{font-size:28px;margin:8px 0 16px}
+h2{font-size:18px;margin:28px 0 6px}p{margin:0 0 10px;overflow-wrap:anywhere}a{color:var(--accent)}
+.note{color:var(--muted);font-size:15px}nav{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:15px}
+.langs{margin-bottom:8px}.langs button{font:inherit;background:none;border:1px solid var(--line);color:var(--fg);
+border-radius:8px;padding:4px 10px;cursor:pointer}.langs button[aria-pressed=true]{border-color:var(--accent);
+color:var(--accent)}footer{border-top:1px solid var(--line);margin-top:40px;padding-top:16px}
+[data-lang]{display:none}[data-lang].shown{display:block}</style></head>
+<body><main><h1>Maparell summit database</h1>
+<p>The summit list included in Maparell is extracted from OpenStreetMap: every node tagged <code>natural=peak</code>
+or <code>natural=volcano</code> that has a name, with its OpenStreetMap id, position, name and height
+(<code>ele</code>, in metres, when it can be read).</p>
+<p>Data © OpenStreetMap contributors. This database is made available under the
+<a href="https://opendatacommons.org/licenses/odbl/">Open Database License (ODbL) 1.0</a>; see also
+<a href="https://www.openstreetmap.org/copyright">openstreetmap.org/copyright</a>.</p>
+<p><a href="Peaks.bin">Peaks.bin</a> — the database exactly as included in the app.</p>
+<p><a href="build-peaks.py">build-peaks.py</a> — the script that creates it from an OpenStreetMap planet file; its
+header describes the file format.</p></main></body></html>
